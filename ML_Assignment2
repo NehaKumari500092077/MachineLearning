@@ -1,0 +1,519 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/NehaKumari500092077/MachineLearning/blob/main/ML_Assignment2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. (a)"
+      ],
+      "metadata": {
+        "id": "cNgXfFhZUSR-"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from scipy import stats\n",
+        "1 - stats.poisson.cdf(30, 25)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IvZ-6YjjUnCd",
+        "outputId": "8c75c5c4-ac24-4cc9-dd8b-6d9283a8e15e"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.1366911308473363"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 4
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. (b)"
+      ],
+      "metadata": {
+        "id": "tEfqX2MnWmYW"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "1 - stats.poisson.cdf(2-1, 25*0.05)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9Pqndd7qWoTs",
+        "outputId": "2778b677-c95b-44b3-92cf-10ed147e55af"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.35536420706457217"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 7
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2. (a)"
+      ],
+      "metadata": {
+        "id": "lLmh2515X3yr"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "p = 0.42\n",
+        "n = 8\n",
+        "pmf = list(stats.binom.cdf(range(0,3), n, p))\n",
+        "1 - sum(pmf)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vP_85v_mX67l",
+        "outputId": "411f3c5e-57a7-444f-e1ef-3e8a5d37dd15"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.6251756532117759"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 14
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2. (b)"
+      ],
+      "metadata": {
+        "id": "auof-IDlbD1y"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "stats.binom.pmf(4, n, p)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "H36T_yhXbCpy",
+        "outputId": "d5051906-7edf-4fa7-e80f-8c79b08908b7"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.2464944673605121"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 15
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3.(a)"
+      ],
+      "metadata": {
+        "id": "LcaJ19-1bZe3"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "stats.expon.cdf(85,\n",
+        "                loc = 1/85,\n",
+        "                scale = 85)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gi_90VNlbfFn",
+        "outputId": "3082ceaf-a4f6-49e9-9ff5-3fe2ae23c498"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.6320696377349755"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 16
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3.(b)"
+      ],
+      "metadata": {
+        "id": "BDvKIvDJbgCk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "1 - stats.expon.cdf(150,\n",
+        "                loc = 1/85,\n",
+        "                scale = 85)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "08TE7WU3biqZ",
+        "outputId": "a4e39535-43cc-45c2-dd0e-62fb5a546e8f"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.17126084522766882"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 17
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4. (a)"
+      ],
+      "metadata": {
+        "id": "LZNXB9r9czxY"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "1 - stats.norm.cdf(50, 38, 5)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NiaxSmn7c2yt",
+        "outputId": "8bd99114-726c-4e8e-d6dc-495bff66ef45"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.008197535924596155"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 19
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4. (b)"
+      ],
+      "metadata": {
+        "id": "qEoIA_Ofc3DF"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "stats.norm.cdf(10, 38, 5)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "q0-SNToSc47H",
+        "outputId": "f89ec6af-ea37-455b-8547-3934d41a0886"
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "1.0717590258310887e-08"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 20
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4. (c)"
+      ],
+      "metadata": {
+        "id": "4VrJppZSc5Pi"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "stats.norm.cdf(60, 38, 5) - stats.norm.cdf(30, 38, 5)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zzSMmpUlc69u",
+        "outputId": "6e0b4ad0-4f62-4e81-d13d-8c0fb8280d12"
+      },
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.9451952957565343"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 21
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "5."
+      ],
+      "metadata": {
+        "id": "OPFAm7b_fGwa"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import math\n",
+        "sample_mean = 4998.1\n",
+        "pop_mean = 5000\n",
+        "pop_std = 1.30\n",
+        "sample_size = 60\n",
+        "z_score = (sample_mean - pop_mean)/(pop_std * math.sqrt(sample_size))\n",
+        "print(\"z-score: \", z_score)\n",
+        "print(\"p-value: \", stats.norm.cdf(z_score))\n",
+        "\n",
+        "#As the p-value is more than 0.05, the null hypothesis is retained & also\n",
+        "#z-score value is higher than -1.64"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fDYCszvmfI6j",
+        "outputId": "47a6e00b-e896-4562-b583-9dc143218d72"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "z-score:  -0.1886838040459662\n",
+            "p-value:  0.4251703230372859\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "6."
+      ],
+      "metadata": {
+        "id": "8JR-766ajhM8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "meu = 0.18 * 100\n",
+        "1 - stats.poisson.cdf(22-1, meu)\n",
+        "\n",
+        "#since the test is two tailed, this probability is compared with 0.025(i.e alpha/2)\n",
+        "#here 0.201 > 0.025 so the null hypothesis is retained"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YFHxi_L1jiRZ",
+        "outputId": "4d60dae7-d884-47ac-a1fb-20ed008bd219"
+      },
+      "execution_count": 29,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.20087639192515905"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 29
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "7"
+      ],
+      "metadata": {
+        "id": "H5j4BDBysIWc"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import math\n",
+        "sample_mean = 368\n",
+        "pop_mean = 450\n",
+        "pop_std = 82\n",
+        "sample_size = 100\n",
+        "z_score = (sample_mean - pop_mean)/(pop_std * math.sqrt(sample_size))\n",
+        "print(\"z-score: \", z_score)\n",
+        "print(\"p-value: \", stats.norm.cdf(z_score))\n",
+        "\n",
+        "#As the p-value is more than 0.05, the null hypothesis is retained & also\n",
+        "#z-score value is higher than -1.64"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "j5ajwAw7sJHb",
+        "outputId": "9c4f49b1-6fa7-4924-ee1c-aa082507b60c"
+      },
+      "execution_count": 31,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "z-score:  -0.1\n",
+            "p-value:  0.460172162722971\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "8."
+      ],
+      "metadata": {
+        "id": "y1anHEKq1yHb"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "trainingscore_data = pd.read_csv(\"/trainingscores.csv\")\n",
+        "trainingscore_data.drop(4, inplace = True, axis = 0)\n",
+        "trainingscore_data = trainingscore_data.astype({\"Score Before Training\": int, \"Score After Training\": int})\n",
+        "stats.ttest_rel(trainingscore_data['Score Before Training'], \n",
+        "                trainingscore_data['Score After Training'])\n",
+        "\n",
+        "#As a below result, p-value is 0.09 which is more than 0.05 value, we conculde that\n",
+        "#they are part of same distribution "
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9mvHyaDC1zYu",
+        "outputId": "6b167148-8a89-40c2-fe87-20f762adf9d7"
+      },
+      "execution_count": 53,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Ttest_relResult(statistic=-1.736432649785126, pvalue=0.09347987807999412)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 53
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "collapsed_sections": [],
+      "name": "Welcome To Colaboratory",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
